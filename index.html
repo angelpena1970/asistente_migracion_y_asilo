@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asistente Virtual</title>
+  <style>
+    /* Reset y configuración básica */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    /* Botón principal */
+    .btn-primary {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+    /* Botón secundario principal (Descargar Documentación) */
+    .btn-secondary-main {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 25px;
+      transition: background 0.3s ease;
+    }
+    .btn-secondary-main:hover {
+      background-color: #5a6268;
+    }
+    /* Botón secundario discreto (Aviso Legal) */
+    .btn-secondary-small {
+      display: inline-block;
+      padding: 6px 15px;
+      font-size: 0.9rem;
+      background-color: #b0b3b6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 40px; /* Más separación del botón anterior */
+      transition: background 0.3s ease;
+    }
+    .btn-secondary-small:hover {
+      background-color: #9a9c9f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Bienvenido al Asistente Virtual</h1>
+    <p>
+      Tu guía para acceder a información legal, apoyo psicosocial y recursos esenciales en la ciudad. Nuestro asistente virtual te ofrece documentación pública de forma clara y accesible para ayudarte en tu proceso migratorio.
+    </p>
+
+    <a href="chatbot.html" class="btn-primary">💬 Hablar con el Asistente</a>
+
+    <div class="btn-container">
+      <a href="descarga.html" class="btn-secondary-main">📥 Descargar Documentación</a>
+      <br> <!-- Salto de línea para que "Aviso Legal" esté debajo -->
+      <a href="aviso-legal.html" class="btn-secondary-small">Aviso Legal</a>
+    </div>
+  </div>
+
+</body>
+</html>

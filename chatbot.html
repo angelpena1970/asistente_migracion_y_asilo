@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asistente Virtual</title>
+  <style>
+    /* Reset y configuración básica */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: row;
+    }
+    
+    /* Contenedor principal con chat y sidebar */
+    .main-container {
+      display: flex;
+      width: 90%;
+      max-width: 1000px;
+      height: 90vh;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* Chat */
+    .chat-container {
+      flex: 3; /* Ocupa 75% */
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+    .info-text {
+      font-size: 0.8rem; /* Ajustable */
+      color: #666;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .chat-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow-y: auto;
+      padding-bottom: 10px;
+    }
+    .chat-bubble {
+      padding: 10px;
+      border-radius: 8px;
+      max-width: 80%;
+      word-wrap: break-word;
+      font-size: 1rem;
+    }
+    .bot {
+      background-color: #e9ecef;
+      align-self: flex-start;
+    }
+    .user {
+      background-color: #007BFF;
+      color: white;
+      align-self: flex-end;
+    }
+    .flag-options img {
+      width: 25px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    .input-box {
+      display: flex;
+      gap: 10px;
+    }
+    input {
+      padding: 10px;
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn {
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: white;
+    }
+    .btn-primary {
+      background-color: #007BFF;
+    }
+    .btn-secondary {
+      background-color: #6c757d;
+    }
+
+    /* ----------------- BANDA LATERAL ----------------- */
+    .sidebar {
+      flex: 1; /* Ocupa 25% */
+      background: #f1f1f1;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+    .sidebar button {
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+    .sidebar .btn-dark {
+      background-color: #333;
+      color: white;
+    }
+    .sidebar hr {
+      border: none;
+      height: 1px;
+      background: #ccc;
+      margin: 10px 0;
+    }
+    .sidebar a {
+      text-decoration: none;
+    }
+
+    /* ----------------- ESTILOS RESPONSIVOS ----------------- */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        height: auto;
+      }
+      .main-container {
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+      }
+      .chat-container {
+        width: 100%;
+        flex: none;
+      }
+      .sidebar {
+        width: 100%;
+        flex: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+      }
+      .sidebar button {
+        font-size: 0.8rem;
+        padding: 8px;
+      }
+      .chat-bubble {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+      .info-text {
+        font-size: 0.7rem;
+      }
+      .chat-bubble {
+        font-size: 0.85rem;
+        max-width: 90%;
+      }
+      .flag-options img {
+        width: 20px;
+      }
+      .btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+      }
+      .sidebar {
+        flex-direction: column;
+        align-items: center;
+      }
+      .sidebar button {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-container">
+    <!-- Sección de chat -->
+    <div class="chat-container">
+      <h1>Asistente Virtual</h1>
+      <p class="info-text">Estás interactuando con un asistente virtual basado en inteligencia artificial, no con una persona. La información proporcionada se basa en fuentes públicas y no constituye asesoramiento legal o profesional.</p>
+
+      <!-- Conversación del Chatbot -->
+      <div class="chat-box">
+        <div class="chat-bubble bot">
+          ¡Hola! ¿En qué idioma quieres que hablemos?
+          <div class="flag-options">
+            <img src="bandera-es.png" alt="Español" title="Español">
+            <img src="bandera-fr.png" alt="Francés" title="Francés">
+            <img src="bandera-en.png" alt="Inglés" title="Inglés">
+          </div>
+        </div>
+        <div class="chat-bubble user">
+          En francés.
+        </div>
+        <div class="chat-bubble bot">
+          Bonjour! Comment puis-je vous aider? Rappelez-vous que je suis un chatbot et non un humain.
+        </div>
+      </div>
+
+      <!-- Entrada de usuario -->
+      <div class="input-box">
+        <input type="text" placeholder="Escribe tu mensaje..." aria-label="Mensaje">
+        <button class="btn btn-primary">Enviar</button>
+        <button class="btn btn-secondary">🎤 Usar Voz</button>
+      </div>
+    </div>
+
+    <!-- Banda lateral -->
+    <div class="sidebar">
+      <button class="btn-secondary">Necesito ayuda legal</button>
+      <button class="btn-secondary">Quiero apoyo emocional</button>
+      <button class="btn-secondary">Busco alojamiento y recursos</button>
+      <hr>
+      <a href="index.html"><button class="btn-secondary">Volver a Inicio</button></a>
+      <button class="btn-secondary">🌍 Cambiar Idioma</button>
+      <button class="btn-secondary">📢 Activar Lectura</button>
+      <button class="btn-dark">🌙 Modo Oscuro</button>
+    </div>
+  </div>
+
+</body>
+</html>
