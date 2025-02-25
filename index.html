@@ -32,11 +32,11 @@
       margin-bottom: 20px;
       color: #555;
     }
-    /* Botón principal */
+    /* Botón principal con texto en varios idiomas */
     .btn-primary {
       display: inline-block;
       padding: 15px 30px;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: bold;
       background-color: #007BFF;
       color: white;
@@ -46,9 +46,15 @@
       text-decoration: none;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       transition: background 0.3s ease;
+      width: 100%;
+      max-width: 350px;
     }
     .btn-primary:hover {
       background-color: #0056b3;
+    }
+    .btn-primary span {
+      display: block;
+      font-size: 1rem;
     }
     /* Botón secundario principal (Descargar Documentación) */
     .btn-secondary-main {
@@ -84,14 +90,6 @@
     .btn-secondary-small:hover {
       background-color: #9a9c9f;
     }
-    /* Estilo para el texto en múltiples idiomas */
-    .multi-language-text {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin: 20px 0;
-      color: #007BFF;
-      line-height: 1.5;
-    }
   </style>
 </head>
 <body>
@@ -102,14 +100,13 @@
       Tu guía para acceder a información legal, apoyo psicosocial y recursos esenciales en la ciudad. Nuestro asistente virtual te ofrece documentación pública de forma clara y accesible para ayudarte en tu proceso migratorio.
     </p>
 
-    <!-- Frase en 5 idiomas -->
-    <p class="multi-language-text">
-      💬 Hablar con el Asistente | Talk to the Assistant | Parler avec l'Assistant | تحدث مع المساعد | Поговорити з асистентом
-    </p>
-
-    <!-- Botón que lleva al asistente -->
+    <!-- Botón con texto en 5 idiomas -->
     <a href="https://chat-migracion-production.up.railway.app/" class="btn-primary" target="_blank" rel="noopener noreferrer">
-      Iniciar Conversación
+      <span>💬 Iniciar Conversación</span>
+      <span>Talk to the Assistant</span>
+      <span>Parler avec l'Assistant</span>
+      <span>تحدث مع المساعد</span>
+      <span>Поговорити з асистентом</span>
     </a>
     
     <div class="btn-container">
