@@ -78,11 +78,19 @@
       border-radius: 4px;
       cursor: pointer;
       text-decoration: none;
-      margin-top: 40px; /* Más separación del botón anterior */
+      margin-top: 40px;
       transition: background 0.3s ease;
     }
     .btn-secondary-small:hover {
       background-color: #9a9c9f;
+    }
+    /* Estilo para el texto en múltiples idiomas */
+    .multi-language-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #007BFF;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -94,8 +102,16 @@
       Tu guía para acceder a información legal, apoyo psicosocial y recursos esenciales en la ciudad. Nuestro asistente virtual te ofrece documentación pública de forma clara y accesible para ayudarte en tu proceso migratorio.
     </p>
 
-    <a href="chatbot.html" class="btn-primary">💬 Hablar con el Asistente</a>
+    <!-- Frase en 5 idiomas -->
+    <p class="multi-language-text">
+      💬 Hablar con el Asistente | Talk to the Assistant | Parler avec l'Assistant | تحدث مع المساعد | Поговорити з асистентом
+    </p>
 
+    <!-- Botón que lleva al asistente -->
+    <a href="https://chat-migracion-production.up.railway.app/" class="btn-primary" target="_blank" rel="noopener noreferrer">
+      Iniciar Conversación
+    </a>
+    
     <div class="btn-container">
       <a href="descarga.html" class="btn-secondary-main">📥 Descargar Documentación</a>
       <br> <!-- Salto de línea para que "Aviso Legal" esté debajo -->
